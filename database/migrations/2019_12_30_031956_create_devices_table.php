@@ -22,6 +22,8 @@ class CreateDevicesTable extends Migration
             $table->string('location', 255);
             $table->string('act_vvoda', 255);
             $table->string('comment', 255);
+            $table->unsignedBigInteger('admin_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
         });
     }
