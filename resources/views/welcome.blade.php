@@ -83,10 +83,6 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
-                <div class="links">
-                    <a href="/journal">Журнал</a>
-                </div>
             </div>
         </div>
     </body>

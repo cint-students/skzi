@@ -18,9 +18,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+    Route::get('journal', 'JournalController@index');
 });
-
-Route::get('journal', 'JournalController@index');
 
 Auth::routes();
 
