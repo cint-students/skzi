@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Device;
+
 class JournalController
 {
     public function index()
     {
-        return view('journal.index');
+        $devices = Device::all();
+        return view('journal.index', compact($devices));
     }
 }

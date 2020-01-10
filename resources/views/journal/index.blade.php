@@ -158,7 +158,14 @@
                     <td>16</td>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                @foreach ($devices as $item)
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->serial_number }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
         </table>
     </div>
 </div>
