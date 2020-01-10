@@ -139,7 +139,7 @@
                         об уничтожении
                     </td>
                 </tr>
-                <tr>
+                <tr class="text-center">
                     <td>1</td>
                     <td>2</td>
                     <td>3</td>
