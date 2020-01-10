@@ -9,6 +9,6 @@ class JournalController
     public function index()
     {
         $devices = Device::all();
-        return view('journal.index', compact($devices));
+        return view('journal.index', compact('devices'));
     }
 }
