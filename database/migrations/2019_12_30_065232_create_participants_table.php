@@ -16,8 +16,8 @@ class CreateParticipantsTable extends Migration
         Schema::create('participants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('employee_id');
-            $table->unsignedBigInteger('task_id');
-            $table->string('role', 255);
+            $table->unsignedBigInteger('task_id')->nullable();
+            $table->string('role', 255)->nullable();
             $table->timestamps();
         });
     }

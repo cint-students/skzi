@@ -14,16 +14,17 @@ class CreateDevicesTable extends Migration
     public function up()
     {
         Schema::create('devices', function (Blueprint $table) {
-            $table->string('serial_number', 128)->primary();
-            $table->string('manufacturer', 255);
-            $table->string('model', 255);
-            $table->string('formular', 255);
-            $table->string('inventory_number', 255);
-            $table->string('location', 255);
-            $table->string('act_vvoda', 255);
-            $table->string('comment', 255);
-            $table->unsignedBigInteger('admin_id');
-            $table->unsignedBigInteger('user_id');
+            $table->bigIncrements('id');
+            $table->string('serial_number', 128);
+            $table->string('manufacturer', 255)->nullable();
+            $table->string('model', 255)->nullable();
+            $table->string('formular', 255)->nullable();
+            $table->string('inventory_number', 255)->nullable();
+            $table->string('location', 255)->nullable();
+            $table->string('act_vvoda', 255)->nullable();
+            $table->string('comment', 255)->nullable();
+            $table->unsignedBigInteger('admin_id')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

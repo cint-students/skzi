@@ -16,9 +16,9 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('task_type_id');
-            $table->string('comment', 255);
-            $table->string('config_change', 255);
-            $table->string('device_serial_number', 255);
+            $table->string('comment', 255)->nullable();
+            $table->string('config_change', 255)->nullable();
+            $table->string('device_serial_number', 255)->nullable();
             $table->timestamps();
         });
     }

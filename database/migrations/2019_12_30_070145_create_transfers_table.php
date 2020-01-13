@@ -15,10 +15,10 @@ class CreateTransfersTable extends Migration
     {
         Schema::create('transfers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('destination', 255);
-            $table->string('letter_info', 255);
-            $table->timestamp('confirmed_at');
-            $table->string('device_serial_number', 128);
+            $table->string('destination', 255)->nullable();
+            $table->string('letter_info', 255)->nullable();
+            $table->timestamp('confirmed_at')->nullable();
+            $table->string('device_serial_number', 128)->nullable();
             $table->timestamps();
         });
     }

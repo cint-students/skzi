@@ -15,8 +15,8 @@ class CreateTaskTypesTable extends Migration
     {
         Schema::create('task_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name', 255);
-            $table->string('schedule', 255);
+            $table->string('name', 255)->nullable();
+            $table->string('schedule', 255)->nullable();
             $table->timestamps();
         });
     }

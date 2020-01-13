@@ -16,7 +16,7 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('person_id');
-            $table->string('position', 255);
+            $table->string('position', 255)->nullable();
             $table->timestamps();
         });
     }
