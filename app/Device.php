@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Device extends Model
 {
-    public function employee_admin()
+    public function person_admin()
     {
-        return $this->belongsTo('App\Employee', 'admin_id');
+        return $this->belongsTo('App\Person', 'admin_id');
     }
 
-    public function employee_user()
+    public function person_user()
     {
-        return $this->belongsTo('App\Employee', 'user_id');
+        return $this->belongsTo('App\Person', 'user_id');
     }
 
     public function transfer()
@@ -23,6 +23,6 @@ class Device extends Model
 
     public function destruction()
     {
-        return $this->hasMany('App\Destruction');
+        return $this->hasOne('App\Destruction');
     }
 }

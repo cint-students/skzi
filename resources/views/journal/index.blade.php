@@ -173,6 +173,20 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>{{ $item->serial_number }}</td>
+                            <td>{{ $item->manufacturer }}</td>
+                            <td>{{ $item->inventory_number }}</td>
+                            <td>{{ $item->person_admin['last_name'] }}</td>
+                            <td>{{ $item->act_vvoda }}</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>9</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>{{ $item->destruction['destroyed_at'] }}</td>
+                            <td>{{ $item->destruction['act_number'] }}</td>
+                            <td>{{ $item->comment }}</td>
                         </tr>
                     @endforeach
                 </tbody>
