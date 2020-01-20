@@ -25,6 +25,7 @@ class CreateDevicesTable extends Migration
             $table->string('comment', 255)->nullable();
             $table->unsignedBigInteger('admin_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->timestamp('started_at')->nullable;
             $table->timestamps();
         });
     }

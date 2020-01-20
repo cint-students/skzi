@@ -16,9 +16,11 @@ class CreateTransfersTable extends Migration
         Schema::create('transfers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('device_id');
-            $table->string('destination', 255)->nullable();
-            $table->string('letter_info', 255)->nullable();
-            $table->timestamp('confirmed_at')->nullable();
+            $table->string('send_to', 255)->nullable();
+            $table->string('send_letter', 255)->nullable();
+            $table->string('send_confirmation', 255)->nullable();
+            $table->string('return_letter', 255)->nullable();
+            $table->string('return_confirmation', 255)->nullable();
             $table->timestamps();
 
             $table->foreign('device_id')->references('id')->on('devices');

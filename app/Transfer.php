@@ -8,6 +8,6 @@ class Transfer extends Model
 {
     public function device()
     {
-        return $this->belongsTo('App\Device', 'device_serial_number');
+        return $this->belongsTo('App\Device');
     }
 }

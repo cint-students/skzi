@@ -16,7 +16,7 @@ class Device extends Model
         return $this->belongsTo('App\Person', 'user_id');
     }
 
-    public function transfer()
+    public function transfers()
     {
         return $this->hasMany('App\Transfer');
     }

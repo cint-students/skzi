@@ -177,16 +177,37 @@
                             <td>{{ $item->inventory_number }}</td>
                             <td>{{ $item->person_admin['last_name'] }}</td>
                             <td>{{ $item->act_vvoda }}</td>
-                            <td>7</td>
-                            <td>8</td>
-                            <td>9</td>
-                            <td>10</td>
-                            <td>11</td>
-                            <td>12</td>
-                            <td>13</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ \Carbon\Carbon::parse($item->started_at)->format('d.m.Y') }}</td>
+                            <td>{{ $item->destruction['destroyed_at'] }}</td>
                             <td>{{ $item->destruction['destroyed_at'] }}</td>
                             <td>{{ $item->destruction['act_number'] }}</td>
                             <td>{{ $item->comment }}</td>
+                        </tr>
+                    @endforeach
+
+                    @foreach ($transfers as $item)
+                        <tr>
+                            <td>{{ $item->device['id'] }}</td>
+                            <td>{{ $item->device['serial_number'] }}</td>
+                            <td>{{ $item->device['manufacturer'] }}</td>
+                            <td>{{ $item->device['inventory_number'] }}</td>
+                            <td>{{ $item->device['person_admin']['last_name'] }}</td>
+                            <td>{{ $item->device['act_vvoda'] }}</td>
+                            <td>{{ $item->send_to }}</td>
+                            <td>{{ $item->send_letter }}</td>
+                            <td>{{ $item->send_confirmation }}</td>
+                            <td>{{ $item->return_letter }}</td>
+                            <td>{{ $item->return_confirmation }}</td>
+                            <td>{{ $item->device->started_at ?? '' }}</td>
+                            <td>{{ $item->device->destruction->destroyed_at ?? '' }}</td>
+                            <td>{{ $item->device->destruction['destroyed_at'] }}</td>
+                            <td>{{ $item->device->destruction['act_number'] }}</td>
+                            <td>{{ $item->device['comment'] }}</td>
                         </tr>
                     @endforeach
                 </tbody>

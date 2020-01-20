@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Device;
+use App\Transfer;
 
 class JournalController
 {
@@ -11,33 +12,11 @@ class JournalController
         $dataType = (object) [
             'display_name_singular' => 'journal'
         ];
-        $records = [
-            'device' => [
-                'serial_number',
-            ],
-            'received' => [
-                'from',
-                'details',
-            ],
-            'send' => [
-                'to',
-                'send_details',
-                'receive_details',
-            ],
-            'return' => [
-                'send_details',
-                'receive_details',
-            ],
-            'date_created',
-            'date_destroyed',
-            'destruction' => [
-                'destroyed_at',
-                'details',
-            ],
-            'comment',
-        ];
 
         $devices = Device::all();
-        return view('journal.index', compact('devices', 'dataType'));
+
+        $transfers = Transfer::all();
+
+        return view('journal.index', compact('devices', 'dataType', 'transfers'));
     }
 }
